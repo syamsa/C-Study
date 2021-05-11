@@ -1,0 +1,205 @@
+using System;
+
+namespace birds
+{
+    interface Birds
+    {
+        void menu();
+        void fly();
+        void display();
+        void swim();
+        void makeSound();
+
+    }
+
+    class duck : Birds
+    {
+        public void menu()
+        {
+            int menuChoice;
+            Console.WriteLine("What action do you wish to perform\n1.fly\t2.display\t3.swim\t4.make a sound\t");
+            menuChoice = Convert.ToInt32(Console.ReadLine());
+            if (menuChoice == 1)
+                fly();
+            else if (menuChoice == 2)
+                display();
+            else if (menuChoice == 3)
+                swim();
+            else if (menuChoice == 4)
+                makeSound();
+            else
+                Console.WriteLine("enter a valid choice");
+
+        }
+        public void fly()
+        {
+            Console.WriteLine("duck cannot fly");
+        }
+        public void display()
+        {
+            Console.WriteLine("displaying duck");
+        }
+        public void swim()
+        {
+            Console.WriteLine("duck can swim");
+        }
+        public void makeSound()
+        {
+            Console.WriteLine("duck quacks");
+        }
+    }
+    class parrot : Birds
+    {
+        public void menu()
+        {
+            int menuChoice;
+            Console.WriteLine("What action do you wish to perform\n1.fly\t2.display\t3.swim\t4.make a sound\t");
+            menuChoice = Convert.ToInt32(Console.ReadLine());
+            if (menuChoice == 1)
+                fly();
+            else if (menuChoice == 2)
+                display();
+            else if (menuChoice == 3)
+                swim();
+            else if (menuChoice == 4)
+                makeSound();
+            else
+                Console.WriteLine("enter a valid choice");
+
+        }
+        public void fly()
+        {
+            Console.WriteLine("parrot can fly");
+        }
+        public void display()
+        {
+            Console.WriteLine("displaying parrot");
+        }
+        public void swim()
+        {
+            Console.WriteLine("parrot cannot swim");
+        }
+        public void makeSound()
+        {
+            Console.WriteLine("parrot screeches");
+        }
+    }
+    class crow : Birds
+    {
+        public void menu()
+        {
+            int menuChoice;
+            Console.WriteLine("What action do you wish to perform\n1.fly\t2.display\t3.swim\t4.make a sound\t");
+            menuChoice = Convert.ToInt32(Console.ReadLine());
+            if (menuChoice == 1)
+                fly();
+            else if (menuChoice == 2)
+                display();
+            else if (menuChoice == 3)
+                swim();
+            else if (menuChoice == 4)
+                makeSound();
+            else
+                Console.WriteLine("enter a valid choice");
+
+        }
+        public void fly()
+        {
+            Console.WriteLine("crow can fly");
+        }
+        public void display()
+        {
+            Console.WriteLine("displaying crow");
+        }
+        public void swim()
+        {
+            Console.WriteLine("crow cannot swim");
+        }
+        public void makeSound()
+        {
+            Console.WriteLine("crow caws");
+        }
+    }
+    class kiwi : Birds
+    {
+        public void menu()
+        {
+            int menuChoice;
+            Console.WriteLine("What action do you wish to perform\n1.fly\t2.display\t3.swim\t4.make a sound\t");
+            menuChoice = Convert.ToInt32(Console.ReadLine());
+            if (menuChoice == 1)
+                fly();
+            else if (menuChoice == 2)
+                display();
+            else if (menuChoice == 3)
+                swim();
+            else if (menuChoice == 4)
+                makeSound();
+            else
+                Console.WriteLine("enter a valid choice");
+
+        }
+        public void fly()
+        {
+            Console.WriteLine("kiwi cannot fly");
+        }
+        public void display()
+        {
+            Console.WriteLine("displaying kiwi");
+        }
+        public void swim()
+        {
+            Console.WriteLine("kiwi cannot swim");
+        }
+        public void makeSound()
+        {
+            Console.WriteLine("kiwi cries");
+        }
+    }
+
+    enum birdChoice
+    {
+        Duck=1,
+        Parrot,
+        Crow,
+        Kiwi
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char continueChoice = 'y';
+            while((continueChoice=='y')||(continueChoice=='Y'))
+            {
+                int choice;
+                Console.WriteLine("Choose your bird\n1.Duck\n2.Parrot\n3.Crow\n4.Kiwi\nEnter your choice\t");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case (int)birdChoice.Duck:
+                        duck d=new duck();
+                        d.menu();
+                        break;
+                    case (int)birdChoice.Parrot:
+                        parrot p=new parrot();
+                        p.menu();
+                        break;
+                    case (int)birdChoice.Crow:
+                        crow c= new crow();
+                        c.menu();
+                        break;
+                    case (int)birdChoice.Kiwi:
+                        kiwi k=new kiwi();
+                        k.menu();
+                        break;
+                    default:
+                        Console.WriteLine("Enter valid option");
+                        break;
+                }
+
+                Console.WriteLine("Do you wish to continue?(Y/N)");
+                continueChoice=Convert.ToChar(Console.ReadLine());
+            }
+        }
+    }
+}
